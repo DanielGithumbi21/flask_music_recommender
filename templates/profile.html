@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{%block body%}
+<div class="container mt-3">
+    <div class="card">
+        <div class="text-center">
+            <h3>Welcome, {{name}}</h3>
+            <a href="/update/{{id}}" class="btn btn-info btn-md ml-3">Change your details</a>
+            <a href="/delete/{{id}}" class="btn btn-danger btn-md">Delete account</a>
+        </div>
+        
+    </div>
+</div>
+{%endblock%}

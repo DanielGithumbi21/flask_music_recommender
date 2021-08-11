@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{%block body%}
+<div class="container mt-3">
+    {%with messages = get_flashed_messages ()%}
+    {%if messages  %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{messages[0]}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {%endif%}
+{%endwith%}
+<form action="/login" method="POST" >
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" name="email" id="floatingPassword" placeholder="Password" required>
+    <label for="floatingPassword">Email</label>
+  </div>
+  <div class="form-floating">
+    <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password" required>
+    <label for="floatingPassword">Password</label>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-primary mt-3 btn-md">Login</button>
+  </div>
+</form>
+
+</div>
+{%endblock%}

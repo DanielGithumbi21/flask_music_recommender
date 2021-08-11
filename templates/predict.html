@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{%block body%}
+<div class="container mt-3">
+<form action="/predict" method="POST" >
+<div class="form-floating mb-3">
+    <input type="number" class="form-control" id="floatingInput" name="age" placeholder="name@example.com" required>
+    <label for="floatingInput">Enter your age</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" name="gender" id="floatingPassword" placeholder="Password" required>
+    <label for="floatingPassword">Gender</label>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-primary mt-3 btn-md">Submit</button>
+  </div>
+</form>
+<div class="text-center mt-3">
+<span class="badge bg-warning text-dark"><h5>Your music genre is: {{prediction_text}}</h5></span>
+</div>
+</div>
+{%endblock%}
